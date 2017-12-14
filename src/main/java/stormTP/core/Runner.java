@@ -154,6 +154,9 @@ public class Runner{
         return r.build().toString();
 	}
 
-
+	@Override
+	public String toString(){
+		return "bonjour" + this.id;
+	}
 	
 }

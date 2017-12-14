@@ -36,8 +36,8 @@ public class ExitBolt implements IRichBolt {
 	
 		String n = t.getValueByField("json").toString();
 	
-		this.semit.send(n);
-		collector.ack(t);
+		this.semit.send("bonjour");
+		collector.ack(null);
 		
 		return;
 		

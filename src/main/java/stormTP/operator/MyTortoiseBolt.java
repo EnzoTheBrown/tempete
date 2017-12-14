@@ -1,42 +1,42 @@
 package stormTP.operator;
 
-
-import java.util.Map;
-
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
-import stormTP.stream.StreamEmiter;
+import org.apache.storm.tuple.Values;
+import stormTP.core.Runner;
+import stormTP.core.TortoiseManager;
 
+import java.util.Map;
 
-public class Exit2Bolt implements IRichBolt {
+public class MyTortoiseBolt implements IRichBolt {
 
-    private static final long serialVersionUID = 4262369370788107342L;
-    //private static Logger logger = Logger.getLogger("ExitBolt");
-    String ipM = "";
-    int port = -1;
+    private static final long serialVersionUID = 4262369370788107343L;
     private OutputCollector collector;
-    StreamEmiter semit = null;
 
-    public Exit2Bolt (int port, String ip) {
-        this.port = port;
-        this.ipM = ip;
-        this.semit = new StreamEmiter(this.port,this.ipM);
+
+    public MyTortoiseBolt () {
+
     }
 
+    /* (non-Javadoc)
+     * @see backtype.storm.topology.IRichBolt#execute(backtype.storm.tuple.Tuple)
+     */
     public void execute(Tuple t) {
-        //HashMap<String,Object> result =
-        //        new ObjectMapper().readValue(JSON_SOURCE, HashMap.class);
+
+
         String n = t.getValueByField("json").toString();
-        this.semit.send(n);
-        collector.ack(t);
+        TortoiseManager tm = new TortoiseManager(5, "candy-lebrun");
+        Runner r = tm.filter(n);
+        //System.out.println( n  + " is treated!");
+        collector.emit(t,new Values(r.toString()));
+
         return;
+
     }
-
-
 
     /* (non-Javadoc)
      * @see backtype.storm.topology.IComponent#declareOutputFields(backtype.storm.topology.OutputFieldsDeclarer)
@@ -59,6 +59,8 @@ public class Exit2Bolt implements IRichBolt {
     public void cleanup() {
 
     }
+
+
 
     /* (non-Javadoc)
      * @see backtype.storm.topology.IRichBolt#prepare(java.util.Map, backtype.storm.task.TopologyContext, backtype.storm.task.OutputCollector)

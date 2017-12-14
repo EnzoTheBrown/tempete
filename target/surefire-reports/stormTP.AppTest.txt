@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: stormTP.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.028 sec <<< FAILURE!
+testTortoiseFilter(stormTP.AppTest)  Time elapsed: 0.024 sec  <<< ERROR!
+java.lang.NoSuchMethodError: stormTP.core.TortoiseManager.<init>(JLjava/lang/String;)V
+	at stormTP.AppTest.testTortoiseFilter(AppTest.java:43)
+

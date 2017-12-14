@@ -2,12 +2,7 @@ package stormTP.core;
 
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-
 import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.json.JsonReader;
@@ -21,10 +16,10 @@ public class TortoiseManager {
 	public static final String PROG = "En progression";
 	public static final String REGR = "En régression";
 	
-	String nomsBinome ="";
-	long dossard = -1;
+	String nomsBinome ="candy-lebrun";
+	int dossard = 5;
 	
-	public TortoiseManager(long dossard, String nomsBinome){
+	public TortoiseManager(int dossard, String nomsBinome){
 		this.nomsBinome = nomsBinome;
 		this.dossard = dossard;
 	}
@@ -35,17 +30,26 @@ public class TortoiseManager {
 	 * @param input : objet JSON contenant les observations de la course courante 
 	 * @return un coureur
 	 */
-	public Runner filter(String input){
-		
-		Runner tortoise = null;
-		
-		//@TODO
-		
-		
-		return tortoise;
-				
-				
-	}
+    public Runner filter(String input){
+        String firstAttribute = "tortoises";
+        JsonReader parseurJ = Json.createReader(new StringReader(input));
+        JsonObject json_tuple = parseurJ.readObject();
+        String singleTuple = json_tuple.getJsonArray(firstAttribute).get(this.dossard).toString();
+        JsonReader parseurT = Json.createReader(new StringReader(singleTuple));
+        JsonObject json_player = parseurT.readObject();
+
+        Runner tortoise = new Runner();
+        tortoise.setId(json_player.getInt("id"));
+        tortoise.setTop(json_player.getInt("top"));
+        tortoise.setNom(this.nomsBinome);
+        tortoise.setNbDerriere(json_player.getInt("nbDerriere"));
+        tortoise.setNbDevant(json_player.getInt("nbDevant"));
+        tortoise.setTotal(json_player.getInt("total"));
+        tortoise.setPosition(json_player.getInt("position"));
+
+
+        return tortoise;
+    }
 	
 	/**
 	 * Permet de calculer le rang de votre coureur

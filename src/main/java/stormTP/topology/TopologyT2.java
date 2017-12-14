@@ -5,6 +5,7 @@ import org.apache.storm.StormSubmitter;
 import org.apache.storm.topology.TopologyBuilder;
 import stormTP.operator.Exit2Bolt;
 import stormTP.operator.MasterInputStreamSpout;
+import stormTP.operator.MyTortoiseBolt;
 import stormTP.operator.NothingBolt;
 
 /**
@@ -29,7 +30,7 @@ public class TopologyT2 {
         /*Affectation à la topologie du spout*/
 		builder.setSpout("masterStream", spout);
         /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
-		builder.setBolt("nofilter", new NothingBolt(), nbExecutors).shuffleGrouping("masterStream");
+		builder.setBolt("nofilter", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
         /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
 		builder.setBolt("exit", new Exit2Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("nofilter");
 
