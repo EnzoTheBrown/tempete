@@ -23,7 +23,6 @@ stormTP/operator/SpeedBolt.class
 stormTP/operator/ComputeBonusBolt.class
 stormTP/core/Runner.class
 stormTP/operator/Exit2Bolt.class
-stormTP/operator/ComputeBonusBOlt.class
 stormTP/operator/NothingBolt.class
 stormTP/topology/TopologyT6.class
 stormTP/operator/MasterInputStreamSpout.class

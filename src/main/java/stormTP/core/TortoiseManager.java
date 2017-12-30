@@ -15,9 +15,9 @@ public class TortoiseManager {
 	public static final String CONST = "Constant";
 	public static final String PROG = "En progression";
 	public static final String REGR = "En régression";
-	
-	String nomsBinome ="candy-lebrun";
-	int dossard = 5;
+
+	private String nomsBinome;
+	private int dossard = 5;
 	
 	public TortoiseManager(int dossard, String nomsBinome){
 		this.nomsBinome = nomsBinome;
@@ -46,7 +46,6 @@ public class TortoiseManager {
         tortoise.setNbDevant(json_player.getInt("nbDevant"));
         tortoise.setTotal(json_player.getInt("total"));
         tortoise.setPosition(json_player.getInt("position"));
-
 
         return tortoise;
     }

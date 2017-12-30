@@ -29,6 +29,5 @@
 /home/enzo/tempete/src/main/java/stormTP/operator/SpeedBolt.java
 /home/enzo/tempete/src/main/java/stormTP/operator/test/TestStatelessWindowBolt.java
 /home/enzo/tempete/src/main/java/stormTP/core/Runner.java
-/home/enzo/tempete/src/main/java/stormTP/operator/ComputeBonusBOlt.java
 /home/enzo/tempete/src/main/java/stormTP/operator/MasterInputStreamSpout.java
 /home/enzo/tempete/src/main/java/stormTP/operator/ExitBolt.java

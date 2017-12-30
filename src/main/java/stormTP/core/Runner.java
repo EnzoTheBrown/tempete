@@ -156,7 +156,7 @@ public class Runner{
 
 	@Override
 	public String toString(){
-		return "bonjour" + this.id;
+		return getJSON_V1();
 	}
 	
 }

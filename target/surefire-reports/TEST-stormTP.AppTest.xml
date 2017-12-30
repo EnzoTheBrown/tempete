@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="stormTP.AppTest" time="0.024" errors="1" skipped="0">
+<testsuite tests="2" failures="1" name="stormTP.AppTest" time="0.043" errors="0" skipped="0">
   <properties>
-    <property name="idea.version" value="2017.2.5"/>
+    <property name="idea.version" value="2017.3.1"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk/jre/lib/amd64"/>
     <property name="java.vm.version" value="25.144-b01"/>
@@ -28,7 +28,7 @@
     <property name="os.name" value="Linux"/>
     <property name="classworlds.conf" value="/opt/intellij-idea-ce/plugins/maven/lib/maven3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
-    <property name="java.library.path" value="/opt/intellij-idea-ce/bin::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-openjdk/jre"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2017.2.5 --offline assembly:assembly"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2017.3.1 --offline test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,9 +60,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="stormTP.AppTest" name="testTortoiseFilter" time="0.024">
-    <error message="stormTP.core.TortoiseManager.&lt;init&gt;(JLjava/lang/String;)V" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: stormTP.core.TortoiseManager.&lt;init&gt;(JLjava/lang/String;)V
-	at stormTP.AppTest.testTortoiseFilter(AppTest.java:43)
-</error>
+  <testcase classname="stormTP.AppTest" name="test1TortoisecomputeRank" time="0.033">
+    <failure message="expected:&lt;...-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1...&gt; but was:&lt;...1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10...&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;...-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1...&gt; but was:&lt;...1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10...&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:81)
+	at junit.framework.Assert.assertEquals(Assert.java:87)
+	at stormTP.AppTest.test1TortoisecomputeRank(AppTest.java:99)
+</failure>
+    <system-out>@Test test1TortoiseComputeRank()
+input: {&quot;id&quot;:1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;position&quot;:189,&quot;nbDevant&quot;:6,&quot;nbDerriere&quot;:3,&quot;total&quot;:10}
+output: {&quot;id&quot;:1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10}
+result: {&quot;id&quot;:-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1}
+
+</system-out>
   </testcase>
+  <testcase classname="stormTP.AppTest" name="testTortoiseFilter" time="0.01"/>
 </testsuite>
