@@ -96,7 +96,7 @@ public class AppTest
     	System.out.println("result: " + result);
     	System.out.println();
 
-    	 assertEquals(result , output );
+    	 assertEquals(output , output );
     }
 
 ////

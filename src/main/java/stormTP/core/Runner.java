@@ -2,35 +2,16 @@ package stormTP.core;
 
 import javax.json.Json;
 import javax.json.JsonObjectBuilder;
+import java.io.Serializable;
 
 /** Classe représentant un coureur 'Tortue' ou 'Lièvre'
 */
-public class Runner{
-	
-	long id = -1;    // identifiant du coureur
-	long top = -1;   // numéro d'observation
-	int position = -1;  // numéro de cellule sur la piste
-	String nom = "";  // nom du coureur
-	String rang = "";   // rang du coueur
-	int nbDevant = -1;   // nombre de coureurs se trouvant devant le coueur courant dans le classement
-	int nbDerriere = -1;  //nombre de coureurs se trouvant derrière le coureur courant dans le classement 
-	int total = -1;  // nombre de coureurs en lice pour la course courante
-	int points = 0;  // nombre de points cumulés par le coureur
-	
-	
-	public Runner(){
-		
-	}
-	
+public class Runner extends AbstractRunner{
+
 	public Runner(long id, String name, int before, int after, int total, int position, long top){
-		this.id = id;
-		this.nom = name;
-		this.nbDevant = before;
-		this.nbDerriere = after;
-		this.total = total;
-		this.position = position;
-		this.top = top;
+		super( id, name, before, after, total,  position, top);
 	}
+	public Runner(){}
 
 /* Getters and setters */
 	public long getId() {
@@ -140,8 +121,9 @@ public class Runner{
        
         return r.build().toString();
 	}
-	
-	public String getJSON_V2(){
+
+
+	public String getJSONRank(){
 		JsonObjectBuilder r = null;
 		r = Json.createObjectBuilder();
 		/* construction de l'objet JSON résultat */
@@ -149,9 +131,9 @@ public class Runner{
 		r.add("top", this.top);
 		r.add("nom", this.nom);
 		r.add("rang", this.rang);
-        r.add("nbTotal", this.total);
-       
-        return r.build().toString();
+		r.add("nbTotal", this.total);
+
+		return r.build().toString();
 	}
 
 	@Override

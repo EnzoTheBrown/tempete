@@ -1,10 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: stormTP.AppTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.047 sec <<< FAILURE!
-test1TortoisecomputeRank(stormTP.AppTest)  Time elapsed: 0.033 sec  <<< FAILURE!
-junit.framework.ComparisonFailure: expected:<...-1,"top":-1,"nom":"","rang":"","nbTotal":-1...> but was:<...1,"top":896,"nom":"Candy-Lebrun","rang":"7","nbTotal":10...>
-	at junit.framework.Assert.assertEquals(Assert.java:81)
-	at junit.framework.Assert.assertEquals(Assert.java:87)
-	at stormTP.AppTest.test1TortoisecomputeRank(AppTest.java:99)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec

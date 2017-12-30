@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="1" name="stormTP.AppTest" time="0.043" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="stormTP.AppTest" time="0.05" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2017.3.1"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-openjdk/jre"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2017.3.1 --offline test"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2017.3.1 --offline assembly:assembly"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,18 +60,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="stormTP.AppTest" name="test1TortoisecomputeRank" time="0.033">
-    <failure message="expected:&lt;...-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1...&gt; but was:&lt;...1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10...&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;...-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1...&gt; but was:&lt;...1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10...&gt;
-	at junit.framework.Assert.assertEquals(Assert.java:81)
-	at junit.framework.Assert.assertEquals(Assert.java:87)
-	at stormTP.AppTest.test1TortoisecomputeRank(AppTest.java:99)
-</failure>
-    <system-out>@Test test1TortoiseComputeRank()
-input: {&quot;id&quot;:1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;position&quot;:189,&quot;nbDevant&quot;:6,&quot;nbDerriere&quot;:3,&quot;total&quot;:10}
-output: {&quot;id&quot;:1,&quot;top&quot;:896,&quot;nom&quot;:&quot;Candy-Lebrun&quot;,&quot;rang&quot;:&quot;7&quot;,&quot;nbTotal&quot;:10}
-result: {&quot;id&quot;:-1,&quot;top&quot;:-1,&quot;nom&quot;:&quot;&quot;,&quot;rang&quot;:&quot;&quot;,&quot;nbTotal&quot;:-1}
-
-</system-out>
-  </testcase>
-  <testcase classname="stormTP.AppTest" name="testTortoiseFilter" time="0.01"/>
+  <testcase classname="stormTP.AppTest" name="testTortoiseFilter" time="0.05"/>
+  <testcase classname="stormTP.AppTest" name="test1TortoisecomputeRank" time="0"/>
 </testsuite>

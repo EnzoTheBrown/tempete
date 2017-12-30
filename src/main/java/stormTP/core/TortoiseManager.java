@@ -49,7 +49,12 @@ public class TortoiseManager {
 
         return tortoise;
     }
-	
+
+    private String findExAequo(int nbDevant, int nbDerriere, int total){
+        if(nbDevant + nbDerriere + 1 < total)
+            return "ex";
+        return "";
+    }
 	/**
 	 * Permet de calculer le rang de votre coureur
 	 * @param id : identifiant du coureur
@@ -63,11 +68,17 @@ public class TortoiseManager {
 	public Runner computeRank(long id, long top, String nom, int nbDevant, int nbDerriere, int total){
 		
 		Runner tortoise = new Runner();
-		
-		//@TODO
-		
-	
-		return tortoise;
+        tortoise.setId(id);
+        tortoise.setTop(top);
+        tortoise.setNom(nom);
+        tortoise.setNbDerriere(nbDerriere);
+        tortoise.setNbDevant(nbDevant);
+        tortoise.setTotal(total);
+        tortoise.setPosition(5);
+
+        String rang = Integer.toString(nbDevant + 1) + findExAequo(nbDevant, nbDerriere, total);
+        tortoise.setRang(rang);
+        return tortoise;
 	}
 	
 	
@@ -167,7 +178,7 @@ public class TortoiseManager {
 	
 	/**
 	 * S'assure que le podium est complet et réaffecte le classement en fonction des ex aequo.
-	 * @param tableau de coureurs classé par leur rang
+	 * @param
 	 * @return le podium sous forme de liste de liste de coureurs
 	 */
 	private static ArrayList<ArrayList<String>> computePodium(Runner[] runners){

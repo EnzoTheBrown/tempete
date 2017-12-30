@@ -32,17 +32,15 @@ public class MyTortoiseBolt implements IRichBolt {
         TortoiseManager tm = new TortoiseManager(5, "candy-lebrun");
         Runner r = tm.filter(n);
         //System.out.println( n  + " is treated!");
-        collector.emit(t,new Values(r.toString()));
-
-        return;
-
+        collector.emit(t, new Values(r));
+        collector.ack(t);
     }
 
     /* (non-Javadoc)
      * @see backtype.storm.topology.IComponent#declareOutputFields(backtype.storm.topology.OutputFieldsDeclarer)
      */
-    public void declareOutputFields(OutputFieldsDeclarer arg0) {
-        arg0.declare(new Fields("json"));
+    public void declareOutputFields(OutputFieldsDeclarer declarer) {
+        declarer.declare(new Fields("tortoise"));
     }
 
 
