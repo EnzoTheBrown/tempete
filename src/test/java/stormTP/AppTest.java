@@ -89,7 +89,7 @@ public class AppTest
 
     	System.out.println("input: " +input);
 
-    	String result = tm.computeRank(1, 896, nomsBinome, 6, 3, 10).getJSON_V2();
+    	String result = tm.computeRank(1, 896, nomsBinome, 6, 3, 10).getJSONRank();
 
 
     	System.out.println("output: " + output);

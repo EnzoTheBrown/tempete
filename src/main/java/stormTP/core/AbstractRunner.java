@@ -1,5 +1,7 @@
 package stormTP.core;
 
+
+
 public abstract class AbstractRunner {
 
     long id = -1;    // identifiant du coureur

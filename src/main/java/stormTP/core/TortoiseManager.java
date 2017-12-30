@@ -80,7 +80,15 @@ public class TortoiseManager {
         tortoise.setRang(rang);
         return tortoise;
 	}
-	
+    static private String deleteLastChar(String phrase) {
+
+
+        String rephrase = null;
+        if (phrase != null && phrase.length() > 1) {
+            rephrase = phrase.substring(0, phrase.length() - 1);
+        }
+        return rephrase;
+    }
 	
 	/**
 	 * Permet de calculer les points bonus d'un coureur
@@ -89,15 +97,8 @@ public class TortoiseManager {
 	 * @return nombre de points gagnés par le coureur
 	 */
 	public static int computePoints(String rang,  int total){
-		
-                int points = -1;
-                
-                //@TODO
-		
-		
-		return points;	
-		
-		
+		int rank = Integer.valueOf(deleteLastChar(deleteLastChar(rang)));
+		return total - rank;
 	}
 	
 

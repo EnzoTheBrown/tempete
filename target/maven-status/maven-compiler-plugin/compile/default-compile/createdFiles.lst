@@ -1,6 +1,7 @@
 stormTP/stream/StreamBuffer.class
 stormTP/operator/Exit5Bolt.class
 stormTP/topology/TopologyT2.class
+stormTP/core/AbstractRunner.class
 stormTP/topology/TopologyE1.class
 stormTP/operator/test/TestStatefulBolt.class
 stormTP/operator/test/TestStatefulWindowBolt.class
@@ -28,6 +29,7 @@ stormTP/topology/TopologyT6.class
 stormTP/operator/MasterInputStreamSpout.class
 stormTP/operator/Exit4Bolt.class
 stormTP/observer/ObserverHook.class
+stormTP/core/Classement.class
 stormTP/topology/TopologyT3.class
 stormTP/operator/test/TestStatelessBolt.class
 stormTP/core/TortoiseManager.class

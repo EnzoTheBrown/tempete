@@ -12,11 +12,13 @@
 /home/enzo/tempete/src/main/java/stormTP/operator/NothingBolt.java
 /home/enzo/tempete/src/main/java/stormTP/operator/ComputePodiumBolt.java
 /home/enzo/tempete/src/main/java/stormTP/operator/ComputeBonusBolt.java
+/home/enzo/tempete/src/main/java/stormTP/core/AbstractRunner.java
 /home/enzo/tempete/src/main/java/stormTP/operator/Exit4Bolt.java
 /home/enzo/tempete/src/main/java/stormTP/operator/RankEvolutionBolt.java
 /home/enzo/tempete/src/main/java/stormTP/core/TortoiseManager.java
 /home/enzo/tempete/src/main/java/stormTP/topology/TopologyT4.java
 /home/enzo/tempete/src/main/java/stormTP/topology/TopologyT1.java
+/home/enzo/tempete/src/main/java/stormTP/core/Classement.java
 /home/enzo/tempete/src/main/java/stormTP/operator/GiveRankBolt.java
 /home/enzo/tempete/src/main/java/stormTP/topology/TopologyT5.java
 /home/enzo/tempete/src/main/java/stormTP/operator/Exit6Bolt.java
