@@ -20,7 +20,9 @@ public class ComputeBonusBolt implements IStatefulBolt{
     @Override
     public void execute(Tuple t) {
         Runner runner = (Runner) t.getValueByField("tortoise");
+        
         TortoiseManager tortoiseManager = new TortoiseManager(5, "Candy-Lebrun");
+        // updating old score
         runner.setPoints(tortoiseManager.computePoints(runner.getRang(), runner.getTotal()) + runner.getPoints());
         collector.emit(new Values(runner));
     }
