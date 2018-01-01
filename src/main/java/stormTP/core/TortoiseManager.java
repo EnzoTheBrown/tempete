@@ -97,8 +97,7 @@ public class TortoiseManager {
 	 * @return nombre de points gagnés par le coureur
 	 */
 	public static int computePoints(String rang,  int total){
-		int rank = Integer.valueOf(deleteLastChar(deleteLastChar(rang)));
-		return total - rank;
+		return total - Integer.valueOf(deleteLastChar(deleteLastChar(rang)));
 	}
 	
 
@@ -111,13 +110,7 @@ public class TortoiseManager {
 	 * @return la vitesse du coueur (en nombre moyen de cellules par top d'observation) arrondie à 2 chiffres après la virgule
 	 */
 	public static double computeSpeed(long topInit, long topFin, int posInit, int posFin){
-		
-		double vitesse = -0.0;
-		
-		//@TODO
-		
-		return vitesse;
-		
+		return Math.abs(posInit - posFin)/(topFin - topInit);
 	}
 	
 	

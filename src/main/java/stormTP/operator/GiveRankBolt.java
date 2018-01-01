@@ -44,8 +44,8 @@ public class GiveRankBolt implements IRichBolt {
     }
 
     @Override
-    public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
-
+    public void prepare(Map arg0, TopologyContext context, OutputCollector collector) {
+        this.collector = collector;
     }
 
     @Override

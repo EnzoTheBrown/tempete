@@ -136,6 +136,19 @@ public class Runner extends AbstractRunner{
 		return r.build().toString();
 	}
 
+	public String getJSONPoints(){
+		JsonObjectBuilder r = null;
+		r = Json.createObjectBuilder();
+		/* construction de l'objet JSON résultat */
+		r.add("id", this.id);
+		r.add("top", this.top);
+		r.add("nom", this.nom);
+		r.add("points", this.points);
+
+		return r.build().toString();
+	}
+
+
 	@Override
 	public String toString(){
 		return getJSON_V1();
