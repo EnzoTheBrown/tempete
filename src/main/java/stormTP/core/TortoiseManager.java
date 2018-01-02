@@ -113,21 +113,25 @@ public class TortoiseManager {
 		return Math.abs(posInit - posFin)/(topFin - topInit);
 	}
 	
-	
+
+
+
 	/**
 	 * Permet de calculer le rang moyen d'un coureur
 	 * @param rangs : tableau des différentes valeurs de rang observées pour un coureur
 	 * @return la moyenne des rangs
 	 */
 	public static int giveAverageRank(String[] rangs){
-				
-		
-		int rang = 0;
-		
-		//@TODO
-		
-		return rang;
-		
+		int accum = 0;
+		for(int i = 0 ; i < rangs.length ; ++i){
+			if(rangs[i].contains("ex")){
+				accum += Integer.valueOf(deleteLastChar(deleteLastChar(rangs[i])));
+			}
+			else{
+				accum+= Integer.valueOf(rangs[i]);
+			}
+		}
+		return accum/rangs.length;
 	}
 	
 
